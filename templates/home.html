@@ -41,11 +41,11 @@
             <div class="card m-1">
                 <div class="card-body">
 
-                {{task.task}}
+                {{task.task}} pk = {{task.pk}}
 
                     <span style="float:right;">
 
-                        <a href="#" class="btn btn-success">
+                        <a href="{%url 'mark_as_done' task.pk%}" class="btn btn-success">
                             <i class="fa fa-check"></i> Mark as Done
                         </a>
 
@@ -70,11 +70,11 @@
         <div class="col-md-5 col-lg-5">
 
             <h5>Completed Tasks</h5>
-            
+            {%for task in completed_tasks%}
             <div class="card m-1">
                 <div class="card-body">
 
-                    
+                    {{task.task}} pk = {{task.pk}}
 
                     <span style="float:right;">
                         <a href="#" class="btn btn-danger">
@@ -84,6 +84,7 @@
 
                 </div>
             </div>
+            {%endfor%}
             
         </div>
 
