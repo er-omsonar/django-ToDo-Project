@@ -19,4 +19,11 @@ def mark_as_undone(request,pk):
   task.is_completed = False
   task.save()
   return redirect('home')
+
+def delete_task(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('home')
+    return redirect('home')  # or render a confirmation page
   
