@@ -95,7 +95,8 @@
 
         <div class="col-md-6 col-lg-6 p-0" style="position:absolute; bottom:50px;">
 
-            <form>
+            <form action="{% url 'addTask'%}" method="POST">
+                {% csrf_token %}
 
                 <div class="form-group">
 
@@ -103,6 +104,7 @@
 
                         <input
                             type="text"
+                            name = "task"
                             class="form-control"
                             placeholder="Add a task"
                         >
