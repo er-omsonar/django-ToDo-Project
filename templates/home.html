@@ -77,7 +77,7 @@
                     {{task.task}} pk = {{task.pk}}
 
                     <span style="float:right;">
-                        <a href="#" class="btn btn-danger">
+                        <a href="{%url 'mark_as_undone' task.pk%}" class="btn btn-danger">
                             <i class="fa fa-times"></i> Mark as Undone
                         </a>
                     </span>
