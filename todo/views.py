@@ -22,10 +22,8 @@ def mark_as_undone(request,pk):
 
 def delete_task(request, pk):
     task = get_object_or_404(Task, pk=pk)
-    if request.method == 'POST':
-        task.delete()
-        return redirect('home')
-    return redirect('home')  # or render a confirmation page
+    task.delete()
+    return redirect('home')
   
 def edit_task(request,pk):
   get_task = get_object_or_404(Task,pk=pk)
